@@ -1,35 +1,109 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="zh-CN">
   <head>
-    <link href="styles/style.css" rel="stylesheet" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>My test page</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="huxuezha 的个人主页 —— 正在学前端和 Git，这里是练习成果。" />
+    <title>huxuezha · 个人主页</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>红砖麦当劳</h1>
-    <p>
-      At Mozilla, we're a global community of technologists, thinkers, and
-      builders working together…
-    </p>
+    <nav class="nav">
+      <a class="nav-brand" href="#home">huxuezha</a>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#gallery">相册</a>
+        <a href="#projects">项目</a>
+        <a href="https://github.com/huxuezha" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
 
-    <ul>
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
+    <main>
+      <section id="home" class="hero">
+        <p class="hero-kicker">你好，我是</p>
+        <h1>huxuezha</h1>
+        <p class="hero-sub">在上海 · 正在学 Web 前端和 Git</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#gallery">看看照片</a>
+          <a class="btn btn-ghost" href="#projects">我的项目</a>
+        </div>
+      </section>
 
-    <p>working together…</p>
-    <a href="https://www.mozilla.org/zh-CN/about/manifesto/">
-      Mozilla Manifesto
-    </a>
-    <img src="images/红砖麦当劳.jpg" alt="红砖麦当劳" />
-    <button>修改用户名</button>
-    <!-- 只留 1 次引入js，放在body最后 -->
-    <script src="scripts/main.js"></script>
+      <section id="about" class="section">
+        <h2>关于</h2>
+        <p>
+          业余时间在学 <strong>HTML / CSS / JavaScript</strong> 和
+          <strong>Git</strong>。这个站点就是练习成果之一 —— 纯静态，没有框架，
+          没有构建工具，一个 <code>index.html</code> 加一份样式表就能跑。
+        </p>
+        <p>
+          平时喜欢在城市的街头和夜里拍照，拍到的片子会陆续放进下面的相册。
+        </p>
+      </section>
+
+      <section id="gallery" class="section">
+        <h2>相册</h2>
+        <p class="section-sub">点开可以放大看。</p>
+        <div class="gallery">
+          <figure class="card" data-caption="红砖麦当劳 · 傍晚的街角，暖黄的灯刚亮起来">
+            <img
+              src="红砖麦当劳.jpg"
+              alt="傍晚的红砖麦当劳，暖黄的灯光映在玻璃窗上"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>红砖麦当劳</strong>
+              <span>傍晚的街角，暖黄的灯刚亮起来</span>
+            </figcaption>
+          </figure>
+          <figure class="card" data-caption="重庆洪崖洞 · 夜里的吊脚楼，嘉陵江边">
+            <img
+              src="重庆洪崖洞.jpg"
+              alt="重庆洪崖洞的夜景，层层叠叠的吊脚楼亮着橙红色的灯"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>重庆洪崖洞</strong>
+              <span>夜里的吊脚楼，嘉陵江边</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>项目</h2>
+        <p class="section-sub">都在 GitHub 上，欢迎来看。</p>
+        <div class="projects">
+          <a class="repo" href="https://github.com/huxuezha/my-first-web" target="_blank" rel="noopener">
+            <strong>my-first-web</strong>
+            <span>这个网站本身。纯静态个人主页，相册带灯箱，零依赖。</span>
+            <em>HTML / CSS / JS</em>
+          </a>
+          <a class="repo" href="https://github.com/huxuezha/git" target="_blank" rel="noopener">
+            <strong>git</strong>
+            <span>Scilab 练习场，跟着教程敲的小实验。</span>
+            <em>Scilab</em>
+          </a>
+          <a class="repo" href="https://github.com/huxuezha/hello-world" target="_blank" rel="noopener">
+            <strong>hello-world</strong>
+            <span>我的第一个 GitHub 仓库，MIT 协议。</span>
+            <em>Markdown</em>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 huxuezha · 用 HTML / CSS / JavaScript 手搓，没有框架</p>
+      <p><a href="https://github.com/huxuezha" target="_blank" rel="noopener">github.com/huxuezha</a></p>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="关闭">&times;</button>
+      <img id="lightboxImg" src="" alt="" />
+      <p id="lightboxCaption"></p>
+    </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
